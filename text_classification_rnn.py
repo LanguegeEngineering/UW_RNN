@@ -47,6 +47,8 @@ train_dataset, test_dataset = dataset['train'], dataset['test']
 
 train_dataset.element_spec
 
+type(train_dataset)
+
 """Initially this returns a dataset of (text, label pairs):"""
 
 for example, label in train_dataset.take(1):
@@ -227,15 +229,8 @@ sample_text = ('The movie was not good. The animation and the graphics '
 predictions = model.predict(np.array([sample_text]))
 print(predictions)
 
-plt.figure(figsize=(16, 6))
-plt.subplot(1, 2, 1)
-plot_graphs(history, 'accuracy')
-plt.subplot(1, 2, 2)
-plot_graphs(history, 'loss')
-
 """Check out other existing recurrent layers such as [GRU layers](https://www.tensorflow.org/api_docs/python/tf/keras/layers/GRU).
 
 If you're interestied in building custom RNNs, see the [Keras RNN Guide](https://www.tensorflow.org/guide/keras/rnn).
 
 """
-
